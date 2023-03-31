@@ -227,7 +227,7 @@ promise
   - the await keyword is used to wait for a promise
   - it can only be used inside async function
   - await keyword can be used to wait for promise to be resolved or rejected
-  ```js
+  ```js`
   async function greet() {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
