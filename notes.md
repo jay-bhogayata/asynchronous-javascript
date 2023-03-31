@@ -85,3 +85,60 @@ setTimeout(function run() {
   setTimeout(run, 100);
 }, 100);
 ```
+
+### Callback:
+
+- in javascript function is first class citizen
+- just like any other object we can pass function as argument to another function
+- a function can also return another function
+
+```js
+function greet(name) {
+  console.log(`Hello ${name}`);
+}
+
+function greetJay(greetFn) {
+  const name = "Jay";
+  greetFn(name);
+}
+
+greetJay(greet);
+```
+
+- any function that is passed as argument to another function is called callback function
+
+- the function that are accepting callback function are called higher order function
+
+- callback can be synchronous or asynchronous
+
+- example of synchronous callback are
+
+```js
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+nums.sort((a, b) => a - b);
+nums.map((num) => num * 2);
+```
+
+- example of asynchronous callback are
+
+```js
+function greet(name) {
+  console.log(`Hello ${name}`);
+}
+setTimeout(greet, 1000, "Jay");
+```
+
+- problem with callback : callback hell
+
+```js
+setTimeout(() => {
+  console.log("Hello");
+  setTimeout(() => {
+    console.log("world");
+    setTimeout(() => {
+      console.log("Jay");
+    }, 1000);
+  }, 1000);
+}, 1000);
+```
