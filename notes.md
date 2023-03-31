@@ -142,3 +142,69 @@ setTimeout(() => {
   }, 1000);
 }, 1000);
 ```
+
+### Promise
+
+- A promise is simply an object that represents the eventual completion or failure of an asynchronous operation
+
+- A promise always in one of three states
+
+  - pending : initial state , neither fulfilled nor rejected
+
+  - fulfilled : meaning that the operation was completed successfully
+
+  - rejected : meaning that the operation failed
+
+- promise help us to deal with async code in more readable and manageable way compare to callback
+
+- callback hell can be avoided by using promise
+
+- How to create promise
+
+```js
+const promise = new Promise();
+```
+
+- how to fullfil or reject promise
+
+```js
+const promise = new Promise((resolve, reject) => {
+  if (true) {
+    resolve("success");
+  } else {
+    reject("failure");
+  }
+});
+```
+
+- how to execute callback when promise is fulfilled or rejected
+
+```js
+promise
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
+
+- it is also possible to chain multiple then
+
+```js
+promise
+  .then((data) => {
+    console.log(data);
+    return "hello";
+  })
+  .then((data) => {
+    console.log(data);
+    return "world";
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
