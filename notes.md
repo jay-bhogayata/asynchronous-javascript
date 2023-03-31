@@ -208,3 +208,33 @@ promise
     console.log(err);
   });
 ```
+
+### Async and Await
+
+- async:
+
+  - the async keyword is used to define an asynchronous function
+  - async function is function that is instance of the AsyncFunction constructor
+  - unlike normal function async function always return a promise
+
+  ```js
+  async function greet() {
+    return "hello";
+  }
+  ```
+
+- await:
+  - the await keyword is used to wait for a promise
+  - it can only be used inside async function
+  - await keyword can be used to wait for promise to be resolved or rejected
+  ```js
+  async function greet() {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("hello");
+      }, 1000);
+    });
+    const res = await promise;
+    console.log(res);
+  }
+  ```
