@@ -238,3 +238,13 @@ promise
     console.log(res);
   }
   ```
+
+### Event loop
+
+[Js Event loop video 1](https://www.youtube.com/watch?v=8aGhZQkoFbQ&t=1101s)
+
+[Js Event loop video 2](https://youtu.be/exBgWAIeIeg?t=3337)
+
+[Js Event loop video 3](https://www.youtube.com/watch?v=cCOL7MC4Pl0&t=288s)
+
+[js visualizer](https://www.jsv9000.app/)
